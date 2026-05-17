@@ -4,6 +4,8 @@ const session = require('express-session');
 const bcrypt = require('bcrypt');
 const path = require('path');
 const https = require('https');
+const http = require('http');
+const fs = require('fs');
 const db = require('./db');
 
 const app = express();
@@ -175,5 +177,25 @@ app.get('/api/fikstur', async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Sunucu calisiyor: http://localhost:${PORT}`));
+const HTTP_PORT  = process.env.HTTP_PORT  || 3000;
+const HTTPS_PORT = process.env.HTTPS_PORT || 3443;
+
+// HTTP → HTTPS yönlendirme
+http.createServer((req, res) => {
+    res.writeHead(301, { Location: `https://${req.headers.host.split(':')[0]}:${HTTPS_PORT}${req.url}` });
+    res.end();
+}).listen(HTTP_PORT, () => console.log(`HTTP  -> https://localhost:${HTTPS_PORT}  (${HTTP_PORT} yönlendirme)`));
+
+// HTTPS sunucu
+try {
+    const sslOptions = {
+        key:  fs.readFileSync(path.join(__dirname, 'certs', 'key.pem')),
+        cert: fs.readFileSync(path.join(__dirname, 'certs', 'cert.pem'))
+    };
+    https.createServer(sslOptions, app).listen(HTTPS_PORT, () =>
+        console.log(`HTTPS sunucu calisiyor: https://localhost:${HTTPS_PORT}`)
+    );
+} catch (err) {
+    console.warn('SSL sertifikasi bulunamadi, yalnizca HTTP calisiyor:', err.message);
+    app.listen(HTTP_PORT, () => console.log(`HTTP sunucu calisiyor: http://localhost:${HTTP_PORT}`));
+}
