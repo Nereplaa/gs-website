@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galatasaray SK - Üye Profili">
+    <title>Profilim | Galatasaray SK</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-gs">
+    <div class="container">
+        <a class="gs-logo" href="index.html">
+            <div class="gs-crest">GS</div>
+            <div class="gs-name">
+                <span class="main-name">GALATASARAY</span>
+                <span class="sub-name">Spor Kulübü</span>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                <li class="nav-item"><a class="nav-link" href="haberler.html">Haberler</a></li>
+                <li class="nav-item"><a class="nav-link" href="hakkimizda.html">Hakkımızda</a></li>
+                <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+            </ul>
+            <div class="navbar-nav" id="authButtons">
+                <a class="nav-link btn-nav-login me-2" href="giris.html">Giriş Yap</a>
+                <a class="nav-link btn-nav-register" href="kayit.html">Kayıt Ol</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="dashboard-section">
+    <div class="container">
+
+        <!-- Not logged in message -->
+        <div id="notLoggedIn" class="text-center py-5" style="display:none">
+            <div style="font-size:4rem">🔒</div>
+            <h3 class="mt-3 fw-bold">Bu sayfaya erişmek için giriş yapmalısınız</h3>
+            <p class="text-muted">Profilinizi görüntülemek için lütfen giriş yapın.</p>
+            <a href="giris.html" class="btn-gs me-2"><i class="fas fa-sign-in-alt me-2"></i>Giriş Yap</a>
+            <a href="kayit.html" class="btn-gs btn-gs-yellow"><i class="fas fa-user-plus me-2"></i>Kayıt Ol</a>
+        </div>
+
+        <!-- Profile content -->
+        <div id="profileContent" style="display:none">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+
+                    <!-- Welcome -->
+                    <div class="mb-4 p-3 rounded" style="background:linear-gradient(135deg,var(--gs-red),#c41e24);color:white;">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="gs-crest" style="width:50px;height:50px;font-size:16px;flex-shrink:0;">GS</div>
+                            <div>
+                                <h5 class="mb-0 fw-bold" id="welcomeMsg">Hoş geldiniz!</h5>
+                                <small style="opacity:0.8">Galatasaray ailesinin değerli bir üyesisiniz 🏆</small>
+                            </div>
+                            <button onclick="logout()" class="ms-auto btn btn-sm" style="background:rgba(255,255,255,0.2);color:white;border:1px solid rgba(255,255,255,0.4);">
+                                <i class="fas fa-sign-out-alt me-1"></i>Çıkış
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="profile-card">
+                        <div class="profile-header">
+                            <div class="profile-avatar" id="profileInitials">GS</div>
+                            <p class="profile-name" id="profileName">Yükleniyor...</p>
+                            <p class="profile-email" id="profileEmail"></p>
+                            <span class="member-badge mt-2 d-inline-block">
+                                <i class="fas fa-star me-1"></i>Galatasaray Üyesi
+                            </span>
+                        </div>
+
+                        <div class="profile-body">
+                            <h6 class="fw-bold text-uppercase mb-3" style="color:var(--gs-red);letter-spacing:1px;font-size:0.8rem;">
+                                <i class="fas fa-id-card me-2"></i>Üye Bilgileri
+                            </h6>
+
+                            <div class="profile-info-item">
+                                <span class="profile-info-label"><i class="fas fa-user me-2 text-gs-red"></i>Ad Soyad</span>
+                                <span class="profile-info-value" id="infoAdSoyad">-</span>
+                            </div>
+                            <div class="profile-info-item">
+                                <span class="profile-info-label"><i class="fas fa-venus-mars me-2 text-gs-red"></i>Cinsiyet</span>
+                                <span class="profile-info-value" id="infoCinsiyet">-</span>
+                            </div>
+                            <div class="profile-info-item">
+                                <span class="profile-info-label"><i class="fas fa-map-marker-alt me-2 text-gs-red"></i>Doğum Yeri</span>
+                                <span class="profile-info-value" id="infoDogumYeri">-</span>
+                            </div>
+                            <div class="profile-info-item">
+                                <span class="profile-info-label"><i class="fas fa-calendar me-2 text-gs-red"></i>Doğum Tarihi</span>
+                                <span class="profile-info-value" id="infoDogumTarihi">-</span>
+                            </div>
+                            <div class="profile-info-item">
+                                <span class="profile-info-label"><i class="fas fa-briefcase me-2 text-gs-red"></i>Meslek</span>
+                                <span class="profile-info-value" id="infoMeslek">-</span>
+                            </div>
+                            <div class="profile-info-item">
+                                <span class="profile-info-label"><i class="fas fa-envelope me-2 text-gs-red"></i>E-posta</span>
+                                <span class="profile-info-value" id="infoEmail">-</span>
+                            </div>
+                            <div class="profile-info-item">
+                                <span class="profile-info-label"><i class="fas fa-clock me-2 text-gs-red"></i>Kayıt Tarihi</span>
+                                <span class="profile-info-value" id="infoKayitTarihi">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Exclusive content (bonus protected area) -->
+                    <div class="mt-4 p-4 rounded" style="background:white;box-shadow:0 2px 15px rgba(0,0,0,0.08);border-left:4px solid var(--gs-yellow);">
+                        <h6 class="fw-bold" style="color:var(--gs-dark);">
+                            <i class="fas fa-lock-open me-2 text-gs-yellow"></i>Üyelere Özel İçerik
+                        </h6>
+                        <p class="text-muted mb-3" style="font-size:0.9rem;">Bu alan sadece kayıtlı üyeler tarafından görülebilir.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Maç analiz raporlarına erişim</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Özel röportaj videoları</li>
+                            <li class="mb-2"><i class="fas fa-check-circle me-2 text-success"></i>Antrenman fotoğrafları</li>
+                            <li><i class="fas fa-check-circle me-2 text-success"></i>Bilet önceliği bildirimleri</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Galatasaray Spor Kulübü Fan Sitesi | Web Teknolojileri Ödevi</p>
+        </div>
+    </div>
+</footer>
+
+<div class="theme-switcher">
+    <div class="theme-panel" id="themePanel">
+        <h6><i class="fas fa-palette me-2"></i>Tema Rengi</h6>
+        <div class="color-options">
+            <div class="color-option" data-theme="gs-original" style="background:#E8252A;"></div>
+            <div class="color-option" data-theme="gs-dark" style="background:#1a1a2e;"></div>
+            <div class="color-option" data-theme="gs-blue" style="background:#0d3b6e;"></div>
+            <div class="color-option" data-theme="gs-green" style="background:#1a6b3a;"></div>
+        </div>
+    </div>
+    <button class="theme-btn" onclick="toggleThemePanel()"><i class="fas fa-palette"></i></button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+async function loadDashboard() {
+    try {
+        const res = await fetch('/api/dashboard');
+        if (res.status === 401) {
+            document.getElementById('notLoggedIn').style.display = 'block';
+            return;
+        }
+        const data = await res.json();
+        const u = data.user;
+        document.getElementById('profileContent').style.display = 'block';
+        document.getElementById('welcomeMsg').textContent = `Hoş geldiniz, ${u.ad} ${u.soyad}!`;
+        document.getElementById('profileInitials').textContent = u.ad[0] + u.soyad[0];
+        document.getElementById('profileName').textContent = `${u.ad} ${u.soyad}`;
+        document.getElementById('profileEmail').textContent = u.email;
+        document.getElementById('infoAdSoyad').textContent = `${u.ad} ${u.soyad}`;
+        document.getElementById('infoCinsiyet').textContent = u.cinsiyet;
+        document.getElementById('infoDogumYeri').textContent = u.dogum_yeri;
+        document.getElementById('infoDogumTarihi').textContent = new Date(u.dogum_tarihi).toLocaleDateString('tr-TR');
+        document.getElementById('infoMeslek').textContent = u.meslek;
+        document.getElementById('infoEmail').textContent = u.email;
+        document.getElementById('infoKayitTarihi').textContent = new Date(u.kayit_tarihi).toLocaleDateString('tr-TR', {day:'2-digit',month:'long',year:'numeric'});
+    } catch {
+        document.getElementById('notLoggedIn').style.display = 'block';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', loadDashboard);
+</script>
+</body>
+</html>

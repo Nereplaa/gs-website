@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galatasaray SK - Üye Kayıt Formu">
+    <title>Kayıt Ol | Galatasaray SK</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-gs">
+    <div class="container">
+        <a class="gs-logo" href="index.html">
+            <div class="gs-crest">GS</div>
+            <div class="gs-name">
+                <span class="main-name">GALATASARAY</span>
+                <span class="sub-name">Spor Kulübü</span>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                <li class="nav-item"><a class="nav-link" href="haberler.html">Haberler</a></li>
+                <li class="nav-item"><a class="nav-link" href="hakkimizda.html">Hakkımızda</a></li>
+                <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+            </ul>
+            <div class="navbar-nav" id="authButtons">
+                <a class="nav-link btn-nav-login me-2" href="giris.html">Giriş Yap</a>
+                <a class="nav-link btn-nav-register active" href="kayit.html">Kayıt Ol</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="form-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-7">
+                <div class="form-card">
+                    <div class="form-card-header">
+                        <div class="gs-crest">GS</div>
+                        <h2>Üye Kayıt Formu</h2>
+                        <p>Galatasaray ailesine katılmak için aşağıdaki formu doldurunuz</p>
+                    </div>
+                    <div class="form-card-body">
+
+                        <div class="alert-box alert-success" id="alertSuccess">
+                            <i class="fas fa-check-circle me-2"></i><span></span>
+                        </div>
+                        <div class="alert-box alert-error" id="alertError">
+                            <i class="fas fa-exclamation-circle me-2"></i><span></span>
+                        </div>
+
+                        <form id="registerForm" novalidate>
+
+                            <!-- Ad & Soyad -->
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="ad" class="form-label">
+                                        <i class="fas fa-user me-1 text-gs-red"></i>Ad <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="ad" placeholder="Adınız" maxlength="50">
+                                    <div class="invalid-feedback" id="adError"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="soyad" class="form-label">
+                                        <i class="fas fa-user me-1 text-gs-red"></i>Soyad <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="soyad" placeholder="Soyadınız" maxlength="50">
+                                    <div class="invalid-feedback" id="soyadError"></div>
+                                </div>
+                            </div>
+
+                            <!-- Cinsiyet -->
+                            <div class="mb-3" id="cinsiyetGroup">
+                                <label class="form-label d-block">
+                                    <i class="fas fa-venus-mars me-1 text-gs-red"></i>Cinsiyet <span class="text-danger">*</span>
+                                </label>
+                                <div class="d-flex gap-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="cinsiyet" id="erkek" value="Erkek">
+                                        <label class="form-check-label" for="erkek">Erkek</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="cinsiyet" id="kadin" value="Kadin">
+                                        <label class="form-check-label" for="kadin">Kadın</label>
+                                    </div>
+                                </div>
+                                <div class="text-danger small mt-1" id="cinsiyetGroupError"></div>
+                            </div>
+
+                            <!-- Doğum Yeri & Tarihi -->
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="dogum_yeri" class="form-label">
+                                        <i class="fas fa-map-marker-alt me-1 text-gs-red"></i>Doğum Yeri <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="text" class="form-control" id="dogum_yeri" placeholder="Şehir / İlçe" maxlength="100">
+                                    <div class="invalid-feedback" id="dogum_yeriError"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="dogum_tarihi" class="form-label">
+                                        <i class="fas fa-calendar me-1 text-gs-red"></i>Doğum Tarihi <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="date" class="form-control" id="dogum_tarihi" max="2010-01-01">
+                                    <div class="invalid-feedback" id="dogum_tarihiError"></div>
+                                </div>
+                            </div>
+
+                            <!-- Meslek -->
+                            <div class="mb-3">
+                                <label for="meslek" class="form-label">
+                                    <i class="fas fa-briefcase me-1 text-gs-red"></i>Meslek <span class="text-danger">*</span>
+                                </label>
+                                <select class="form-select" id="meslek">
+                                    <option value="">-- Meslek Seçiniz --</option>
+                                    <option value="Doktor">Doktor</option>
+                                    <option value="Muhendis">Mühendis</option>
+                                    <option value="Hemsire">Hemşire</option>
+                                    <option value="Ogretmen">Öğretmen</option>
+                                    <option value="Asker">Asker</option>
+                                    <option value="Hakim">Hakim</option>
+                                    <option value="Ciftci">Çiftçi</option>
+                                    <option value="Esnaf">Esnaf</option>
+                                    <option value="Diger">Diğer</option>
+                                </select>
+                                <div class="invalid-feedback" id="meslekError"></div>
+                            </div>
+
+                            <!-- E-posta -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label">
+                                    <i class="fas fa-envelope me-1 text-gs-red"></i>E-posta Adresi <span class="text-danger">*</span>
+                                </label>
+                                <input type="email" class="form-control" id="email" placeholder="ornek@email.com">
+                                <div class="invalid-feedback" id="emailError"></div>
+                            </div>
+
+                            <!-- Şifre -->
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <label for="sifre" class="form-label">
+                                        <i class="fas fa-lock me-1 text-gs-red"></i>Şifre <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="password" class="form-control" id="sifre" placeholder="En az 6 karakter">
+                                    <div class="invalid-feedback" id="sifreError"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="sifre_tekrar" class="form-label">
+                                        <i class="fas fa-lock me-1 text-gs-red"></i>Şifre Tekrar <span class="text-danger">*</span>
+                                    </label>
+                                    <input type="password" class="form-control" id="sifre_tekrar" placeholder="Şifreyi tekrar giriniz">
+                                    <div class="invalid-feedback" id="sifre_tekrarError"></div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-gs-submit">
+                                <i class="fas fa-user-plus me-2"></i>Kayıt Ol
+                            </button>
+
+                            <p class="text-center mt-3 text-muted" style="font-size:0.9rem;">
+                                Zaten üye misiniz? <a href="giris.html" class="text-gs-red fw-bold">Giriş Yap</a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Galatasaray Spor Kulübü Fan Sitesi | Web Teknolojileri Ödevi</p>
+        </div>
+    </div>
+</footer>
+
+<div class="theme-switcher">
+    <div class="theme-panel" id="themePanel">
+        <h6><i class="fas fa-palette me-2"></i>Tema Rengi</h6>
+        <div class="color-options">
+            <div class="color-option" data-theme="gs-original" style="background:#E8252A;"></div>
+            <div class="color-option" data-theme="gs-dark" style="background:#1a1a2e;"></div>
+            <div class="color-option" data-theme="gs-blue" style="background:#0d3b6e;"></div>
+            <div class="color-option" data-theme="gs-green" style="background:#1a6b3a;"></div>
+        </div>
+    </div>
+    <button class="theme-btn" onclick="toggleThemePanel()"><i class="fas fa-palette"></i></button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/kayit.js"></script>
+<script>
+// Override alert display to set inner text properly
+const origError = document.getElementById('alertError');
+const origSuccess = document.getElementById('alertSuccess');
+// kayit.js sets textContent directly, rewire to span
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('registerForm');
+    // patch alertSuccess/alertError to use span child
+    ['alertSuccess','alertError'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            const orig = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'textContent');
+            // Already handled in kayit.js via direct textContent on the div
+        }
+    });
+});
+</script>
+</body>
+</html>

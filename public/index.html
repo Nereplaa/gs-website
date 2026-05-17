@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galatasaray Spor Kulübü Resmi Fan Sayfası - Haberler, Maçlar, Kadro">
+    <meta name="keywords" content="Galatasaray, GS, Cimbom, Süper Lig, Futbol">
+    <meta name="author" content="Galatasaray Fan Site">
+    <title>Galatasaray SK | Ana Sayfa</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-gs">
+        <div class="container">
+            <a class="gs-logo" href="index.html">
+                <div class="gs-crest">GS</div>
+                <div class="gs-name">
+                    <span class="main-name">GALATASARAY</span>
+                    <span class="sub-name">Spor Kulübü</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+                aria-label="Menüyü aç">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="haberler.html">Haberler</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hakkimizda.html">Hakkımızda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                </ul>
+                <div class="navbar-nav" id="authButtons">
+                    <a class="nav-link btn-nav-login me-2" href="giris.html">Giriş Yap</a>
+                    <a class="nav-link btn-nav-register" href="kayit.html">Kayıt Ol</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-section">
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <span class="hero-badge">⚽ 1905'ten Bugüne Şampiyonluk Geleneği</span>
+                    <h1 class="hero-title">GALATASARAY<br><span>SPOR KULÜBÜ</span></h1>
+                    <p class="hero-subtitle">Cimbom • Aslan • Şampiyon</p>
+                    <p class="hero-desc">
+                        Türkiye'nin en köklü ve başarılı futbol kulübü.
+                        24 Süper Lig şampiyonluğu, UEFA Kupası ve UEFA Süper Kupası ile
+                        Avrupa'da adını altın harflerle yazdırdı.
+                    </p>
+                    <a href="haberler.html" class="btn-hero-primary">
+                        <i class="fas fa-newspaper me-2"></i>Son Haberler
+                    </a>
+                    <a href="kayit.html" class="btn-hero-secondary" id="heroUyeOl">
+                        <i class="fas fa-user-plus me-2"></i>Üye Ol
+                    </a>
+                </div>
+                <div class="col-lg-5 text-center mt-5 mt-lg-0">
+                    <div class="hero-crest-large mx-auto">GS</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- STATS BAR -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <span class="stat-number">24</span>
+                        <span class="stat-label">Süper Lig Şampiyonluğu</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <span class="stat-number">18</span>
+                        <span class="stat-label">Türkiye Kupası</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <span class="stat-number">1</span>
+                        <span class="stat-label">UEFA Kupası</span>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <span class="stat-number">1905</span>
+                        <span class="stat-label">Kuruluş Yılı</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SON HABERLER -->
+    <main>
+        <section class="news-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Son <span>Haberler</span></h2>
+                    <span class="divider"></span>
+                    <p>Galatasaray dünyasından en güncel gelişmeler</p>
+                </div>
+                <div class="row" id="newsContainer">
+                    <div class="gs-spinner"></div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="haberler.html" class="btn-gs">Tüm Haberler <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FIKSTÜR -->
+        <section class="fixtures-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Son <span>Maçlar</span></h2>
+                    <span class="divider"></span>
+                </div>
+                <div class="table-responsive">
+                    <table class="fixture-table table mb-0">
+                        <thead>
+                            <tr>
+                                <th>Tarih</th>
+                                <th>Ev Sahibi</th>
+                                <th class="text-center">Skor</th>
+                                <th>Misafir</th>
+                                <th>Lig</th>
+                                <th>Sonuç</th>
+                            </tr>
+                        </thead>
+                        <tbody id="fixtureBody">
+                            <tr><td colspan="6" class="text-center py-4"><div class="gs-spinner" style="margin:auto;"></div></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- KADRO -->
+        <section class="squad-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Galatasaray <span>Kadrosu</span></h2>
+                    <span class="divider"></span>
+                    <p>Tüm oyuncuları görmek için kaydırın veya otomatik geçişi izleyin</p>
+                </div>
+            </div>
+            <div class="squad-marquee-wrapper">
+                <div class="squad-marquee" id="squadContainer">
+                    <div class="text-center py-4" style="width:100%"><div class="gs-spinner" style="margin:auto;"></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VİDEO -->
+        <section class="video-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Galatasaray <span style="color:var(--gs-yellow)">TV</span></h2>
+                    <span class="divider" style="background: linear-gradient(90deg, #FDB913, #E8252A);"></span>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="video-wrapper">
+                            <iframe src="https://www.youtube.com/embed/PEJiem5kPfo" title="Galatasaray TV"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen loading="lazy">
+                            </iframe>
+                        </div>
+                        <p class="text-center mt-3" style="color:rgba(255,255,255,0.5); font-size:0.85rem;">
+                            <i class="fab fa-youtube me-1"></i> Galatasaray resmi YouTube kanalından içerikler
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ASIDE - Hızlı Üyelik CTA -->
+        <aside class="py-5" style="background: linear-gradient(135deg, var(--gs-red), #c41e24);">
+            <div class="container text-center">
+                <h3 class="text-white fw-900 mb-2" style="font-weight:900;">Galatasaray Ailesine Katıl!</h3>
+                <p class="text-white-50 mb-4">Üye olarak özel içeriklere, maç analizlerine ve daha fazlasına erişin.</p>
+                <div id="asideCTA">
+                    <a href="kayit.html" class="btn-gs btn-gs-yellow me-3">
+                        <i class="fas fa-user-plus me-2"></i>Ücretsiz Kayıt Ol
+                    </a>
+                    <a href="giris.html" class="btn-hero-secondary">
+                        <i class="fas fa-sign-in-alt me-2"></i>Giriş Yap
+                    </a>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="footer-brand">
+                        <div class="gs-crest">GS</div>
+                        <h5 class="footer-title">Galatasaray SK</h5>
+                        <p>1905 yılında İstanbul'da kurulan Galatasaray Spor Kulübü, Türkiye'nin en başarılı futbol
+                            takımıdır.</p>
+                        <div class="social-links">
+                            <a href="https://twitter.com/Galatasaray" target="_blank" rel="noopener"
+                                class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/galatasaray/" target="_blank" rel="noopener"
+                                class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/Galatasaray" target="_blank" rel="noopener"
+                                class="social-link"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.youtube.com/Galatasaray" target="_blank" rel="noopener"
+                                class="social-link"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2 mb-4">
+                    <h6 class="footer-title">Hızlı Bağlantılar</h6>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Ana Sayfa</a></li>
+                        <li><a href="haberler.html">Haberler</a></li>
+                        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+                        <li><a href="iletisim.html">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2 mb-4">
+                    <h6 class="footer-title">Üyelik</h6>
+                    <ul class="footer-links">
+                        <li><a href="kayit.html">Kayıt Ol</a></li>
+                        <li><a href="giris.html">Giriş Yap</a></li>
+                        <li><a href="dashboard.html">Profilim</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h6 class="footer-title">İletişim</h6>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt me-2 text-gs-yellow"></i>Ali Sami Yen Spor Kompleksi,
+                            İstanbul</li>
+                        <li class="mt-2"><i class="fas fa-envelope me-2 text-gs-yellow"></i>info@galatasaray.org</li>
+                        <li class="mt-2"><i class="fas fa-phone me-2 text-gs-yellow"></i>+90 212 XXX XX XX</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Galatasaray Spor Kulübü Fan Sitesi | Web Teknolojileri Ödevi</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- TEMA DEĞİŞTİRİCİ -->
+    <div class="theme-switcher">
+        <div class="theme-panel" id="themePanel">
+            <h6><i class="fas fa-palette me-2"></i>Tema Rengi</h6>
+            <div class="color-options">
+                <div class="color-option" data-theme="gs-original" style="background:#E8252A;"
+                    title="Galatasaray Orijinal"></div>
+                <div class="color-option" data-theme="gs-dark" style="background:#1a1a2e;" title="Gece Mavisi"></div>
+                <div class="color-option" data-theme="gs-blue" style="background:#0d3b6e;" title="Okyanus"></div>
+                <div class="color-option" data-theme="gs-green" style="background:#1a6b3a;" title="Orman"></div>
+            </div>
+            <small class="text-muted">Tema tercihiniz kaydedilir</small>
+        </div>
+        <button class="theme-btn" onclick="toggleThemePanel()" title="Tema Değiştir">
+            <i class="fas fa-palette"></i>
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+    const GS_ID = 3061;
+
+    const MEVKI = {
+        Goalkeeper: { tr: 'Kaleci',    emoji: '&#x1F9E4;' },
+        Defender:   { tr: 'Defans',    emoji: '&#x1F6E1;' },
+        Midfielder: { tr: 'Orta Saha', emoji: '&#x26A1;' },
+        Attacker:   { tr: 'Forvet',    emoji: '&#x26BD;' }
+    };
+
+    async function loadSquad() {
+        const container = document.getElementById('squadContainer');
+        if (!container) return;
+        try {
+            const res = await fetch('/api/kadro');
+            const data = await res.json();
+            if (!data.success || !data.data.length) {
+                container.innerHTML = '<p class="text-center text-muted py-3" style="width:100%">Kadro bilgisi şu an mevcut değil.</p>';
+                return;
+            }
+            const order = ['Goalkeeper', 'Defender', 'Midfielder', 'Attacker'];
+            const sorted = [...data.data].sort((a, b) => order.indexOf(a.position) - order.indexOf(b.position));
+            
+            function buildCards(players) {
+                return players.map(p => {
+                    const pos = MEVKI[p.position] || { tr: p.position, emoji: '&#x26BD;' };
+                    const avatarInner = p.photo
+                        ? '<img src="' + p.photo + '" class="player-photo" alt="' + p.name + '" loading="lazy">'
+                        : pos.emoji;
+                    return '<div class="marquee-card">' +
+                        '<figure class="player-card">' +
+                        '<div class="player-avatar player-avatar-api">' + avatarInner + '</div>' +
+                        '<figcaption>' +
+                        '<p class="player-number">No ' + (p.number != null ? p.number : '-') + '</p>' +
+                        '<p class="player-name">' + p.name + '</p>' +
+                        '<p class="player-position">' + pos.tr + '</p>' +
+                        '</figcaption>' +
+                        '</figure>' +
+                        '</div>';
+                }).join('');
+            }
+            
+            // Duplicate cards for seamless infinite loop
+            const cards = buildCards(sorted);
+            container.innerHTML = '<div class="marquee-track">' + cards + cards + '</div>';
+            
+            // Pause on hover
+            const track = container.querySelector('.marquee-track');
+            container.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
+            container.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
+        } catch (e) {
+            container.innerHTML = '<p class="text-center text-danger py-3" style="width:100%">Kadro verisi yüklenemedi.</p>';
+        }
+    }
+
+    async function loadFixtures() {
+        const tbody = document.getElementById('fixtureBody');
+        if (!tbody) return;
+        try {
+            const res = await fetch('/api/fikstur');
+            const data = await res.json();
+            if (!data.success) {
+                tbody.innerHTML = '<tr><td colspan="6" class="text-center text-muted py-3">Fikstür yüklenemedi.</td></tr>';
+                return;
+            }
+            const rows = [];
+            const fmt = d => new Date(d).toLocaleDateString('tr-TR', { day: '2-digit', month: 'short', year: 'numeric' });
+
+            (data.gecmis || []).forEach(f => {
+                const home = f.teams.home, away = f.teams.away;
+                const hg = f.goals.home ?? 0, ag = f.goals.away ?? 0;
+                const isHome = home.id === GS_ID;
+                let badge;
+                if (isHome) badge = hg > ag ? '<span class="badge-win">G</span>' : hg < ag ? '<span class="badge-loss">M</span>' : '<span class="badge-draw">B</span>';
+                else        badge = ag > hg ? '<span class="badge-win">G</span>' : ag < hg ? '<span class="badge-loss">M</span>' : '<span class="badge-draw">B</span>';
+                rows.push('<tr>' +
+                    '<td>' + fmt(f.fixture.date) + '</td>' +
+                    '<td class="' + (home.id === GS_ID ? 'fixture-home' : '') + '">' + home.name + '</td>' +
+                    '<td class="fixture-score">' + hg + ' – ' + ag + '</td>' +
+                    '<td class="' + (away.id === GS_ID ? 'fixture-home' : '') + '">' + away.name + '</td>' +
+                    '<td>' + f.league.name + '</td>' +
+                    '<td>' + badge + '</td>' +
+                    '</tr>');
+            });
+
+            (data.gelecek || []).forEach(f => {
+                const home = f.teams.home, away = f.teams.away;
+                rows.push('<tr>' +
+                    '<td>' + fmt(f.fixture.date) + '</td>' +
+                    '<td class="' + (home.id === GS_ID ? 'fixture-home' : '') + '">' + home.name + '</td>' +
+                    '<td class="fixture-score text-muted">vs</td>' +
+                    '<td class="' + (away.id === GS_ID ? 'fixture-home' : '') + '">' + away.name + '</td>' +
+                    '<td>' + f.league.name + '</td>' +
+                    '<td><span class="badge-upcoming">Yaklaşan</span></td>' +
+                    '</tr>');
+            });
+
+            tbody.innerHTML = rows.length
+                ? rows.join('')
+                : '<tr><td colspan="6" class="text-center text-muted py-3">Maç verisi bulunamadı.</td></tr>';
+        } catch (e) {
+            tbody.innerHTML = '<tr><td colspan="6" class="text-center text-danger py-3">Fikstür yüklenemedi.</td></tr>';
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        loadNews('newsContainer', 6);
+        loadSquad();
+        loadFixtures();
+    });
+    </script>
+</body>
+
+</html>
