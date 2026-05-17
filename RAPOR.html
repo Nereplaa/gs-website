@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Galatasaray SK Web Sitesi — Proje Raporu</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;color:#1a1a1a;line-height:1.7;padding:0;background:#fff}
+@media print{body{padding:0}@page{margin:1.5cm 2cm}}
+
+.cover{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+background:linear-gradient(135deg,#0d0000 0%,#2d0000 50%,#1a0000 100%);color:#fff;text-align:center;
+page-break-after:always;padding:3rem}
+.cover .crest{width:120px;height:120px;background:linear-gradient(135deg,#FDB913 50%,#E8252A 50%);
+border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:900;
+border:6px solid rgba(253,185,19,0.3);margin-bottom:2rem}
+.cover h1{font-size:2.4rem;font-weight:900;letter-spacing:3px;margin-bottom:0.5rem}
+.cover h1 span{color:#FDB913}
+.cover h2{font-size:1.2rem;font-weight:400;color:rgba(255,255,255,0.7);margin-bottom:3rem}
+.cover .meta{color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:2}
+.cover .meta strong{color:#FDB913}
+.cover .bar{width:80px;height:4px;background:linear-gradient(90deg,#E8252A,#FDB913);border-radius:2px;margin:2rem auto}
+
+.content{max-width:800px;margin:0 auto;padding:2rem 2.5rem}
+h2{font-size:1.4rem;font-weight:900;color:#E8252A;text-transform:uppercase;letter-spacing:2px;
+margin:2.5rem 0 1rem;padding-bottom:0.5rem;border-bottom:3px solid #FDB913}
+h3{font-size:1.05rem;font-weight:700;color:#1a1a1a;margin:1.5rem 0 0.7rem}
+p,li{font-size:0.92rem;margin-bottom:0.6rem}
+ul{padding-left:1.5rem}
+
+table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;font-size:0.85rem}
+thead{background:linear-gradient(135deg,#1a1a1a,#2d2d2d)}
+thead th{color:#FDB913;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;padding:0.7rem 0.8rem;
+text-align:left;font-size:0.78rem}
+tbody td{padding:0.6rem 0.8rem;border-bottom:1px solid #eee}
+tbody tr:nth-child(even){background:#f9f9f9}
+tbody tr:hover{background:#fff5f5}
+
+.check{color:#28a745;font-weight:700}
+.arch-box{background:#f8f8f8;border:1px solid #e0e0e0;border-radius:8px;padding:1.5rem;margin:1rem 0;
+font-family:'Courier New',monospace;font-size:0.8rem;line-height:1.8;white-space:pre;overflow-x:auto}
+
+code{background:#f0f0f0;padding:0.15rem 0.4rem;border-radius:3px;font-size:0.85rem;font-family:'Courier New',monospace}
+
+.page-break{page-break-before:always}
+</style>
+</head>
+<body>
+
+<!-- KAPAK -->
+<div class="cover">
+<div class="crest">GS</div>
+<h1>GALATASARAY SK <span>FAN WEB SİTESİ</span></h1>
+<h2>Web Teknolojileri Dersi — Proje Raporu</h2>
+<div class="bar"></div>
+<div class="meta">
+<strong>Öğrenci:</strong> Alperen Yağmur<br>
+<strong>Kurum:</strong> Kocaeli Sağlık ve Teknoloji Üniversitesi<br>
+<strong>Ders:</strong> Web Teknolojileri<br>
+<strong>Tarih:</strong> 17 Mayıs 2026
+</div>
+</div>
+
+<!-- İÇERİK -->
+<div class="content">
+
+<h2>1. Projenin Amacı</h2>
+<p>Bu proje, derste öğrenilen HTML, CSS, JavaScript ve veritabanı teknolojileri kullanılarak <strong>Galatasaray Spor Kulübü</strong> temalı dinamik bir web sitesi geliştirmeyi amaçlamaktadır. Site; kullanıcı kayıt/giriş sistemi, gerçek zamanlı kadro ve fikstür verileri, haberler, tema değiştirme ve responsive tasarım gibi modern web geliştirme özelliklerini barındırmaktadır.</p>
+
+<h2>2. Kullanılan Teknolojiler ve Kütüphaneler</h2>
+
+<h3>2.1 Frontend (İstemci Tarafı)</h3>
+<table><thead><tr><th>Teknoloji</th><th>Versiyon</th><th>Kullanım Amacı</th></tr></thead><tbody>
+<tr><td><strong>HTML5</strong></td><td>-</td><td>Sayfa yapısı ve semantik etiketler</td></tr>
+<tr><td><strong>CSS3</strong></td><td>-</td><td>Özel tasarım, CSS değişkenleri, gradientler, animasyonlar, mask-image</td></tr>
+<tr><td><strong>JavaScript (ES6+)</strong></td><td>-</td><td>DOM manipülasyonu, Fetch API, oturum yönetimi, form doğrulama</td></tr>
+<tr><td><strong>Bootstrap 5.3</strong></td><td>CDN</td><td>Responsive grid sistemi, navbar, formlar, tablo düzeni</td></tr>
+<tr><td><strong>Font Awesome 6.4</strong></td><td>CDN</td><td>İkon kütüphanesi</td></tr>
+</tbody></table>
+
+<h3>2.2 Backend (Sunucu Tarafı)</h3>
+<table><thead><tr><th>Kütüphane</th><th>Versiyon</th><th>Kullanım Amacı</th></tr></thead><tbody>
+<tr><td><strong>Node.js</strong></td><td>v24.x</td><td>JavaScript çalıştırma ortamı</td></tr>
+<tr><td><strong>Express.js</strong></td><td>4.19.2</td><td>HTTP sunucu framework'ü, routing, middleware</td></tr>
+<tr><td><strong>mysql2</strong></td><td>3.9.7</td><td>MySQL veritabanı bağlantısı (promise, connection pooling)</td></tr>
+<tr><td><strong>bcrypt</strong></td><td>5.1.1</td><td>Şifrelerin güvenli hash'lenmesi (salt round: 10)</td></tr>
+<tr><td><strong>express-session</strong></td><td>1.18.0</td><td>Sunucu taraflı oturum yönetimi</td></tr>
+<tr><td><strong>dotenv</strong></td><td>16.4.5</td><td>Ortam değişkenlerini okuma</td></tr>
+</tbody></table>
+
+<h3>2.3 Veritabanı &amp; Harici API</h3>
+<table><thead><tr><th>Teknoloji</th><th>Kullanım Amacı</th></tr></thead><tbody>
+<tr><td><strong>MySQL</strong></td><td>Kullanıcı kayıtları ve haber verilerinin kalıcı depolanması</td></tr>
+<tr><td><strong>SofaScore Public API</strong></td><td>Güncel kadro bilgileri ve 2025-2026 sezonu fikstür/maç sonuçları</td></tr>
+</tbody></table>
+
+<h2 class="page-break">3. Sistem Mimarisi</h2>
+<div class="arch-box">┌──────────────────────────────────────────────┐
+│              İSTEMCİ (Tarayıcı)              │
+│   HTML5  ·  CSS3  ·  JavaScript (ES6+)       │
+│   7 sayfa  ·  Bootstrap 5  ·  Font Awesome   │
+└──────────────────┬───────────────────────────┘
+                   │ Fetch API (JSON)
+┌──────────────────┴───────────────────────────┐
+│          SUNUCU (Node.js + Express)          │
+│  POST /api/register   — Kullanıcı kaydı     │
+│  POST /api/login      — Kullanıcı girişi     │
+│  POST /api/logout     — Oturum sonlandırma   │
+│  GET  /api/me         — Oturum kontrolü      │
+│  GET  /api/haberler   — Haber listesi        │
+│  GET  /api/dashboard  — Profil bilgileri     │
+│  GET  /api/kadro      — Oyuncu kadrosu       │
+│  GET  /api/fikstur    — Maç sonuçları        │
+└────────┬─────────────────────┬───────────────┘
+         │                     │
+┌────────▼──────────┐ ┌───────▼───────────────┐
+│  MySQL Veritabanı │ │  SofaScore API        │
+│  · users          │ │  · /team/3061/players  │
+│  · haberler       │ │  · /team/3061/events   │
+└───────────────────┘ └───────────────────────┘</div>
+
+<h2>4. Veritabanı Şeması</h2>
+<h3>4.1 <code>users</code> Tablosu</h3>
+<table><thead><tr><th>Sütun</th><th>Tip</th><th>Açıklama</th></tr></thead><tbody>
+<tr><td>id</td><td>INT (PK, AI)</td><td>Benzersiz kullanıcı kimliği</td></tr>
+<tr><td>ad</td><td>VARCHAR(50)</td><td>Kullanıcı adı</td></tr>
+<tr><td>soyad</td><td>VARCHAR(50)</td><td>Kullanıcı soyadı</td></tr>
+<tr><td>cinsiyet</td><td>ENUM</td><td>Cinsiyet — Radio Button</td></tr>
+<tr><td>dogum_yeri</td><td>VARCHAR(100)</td><td>Doğum yeri — Text Field</td></tr>
+<tr><td>dogum_tarihi</td><td>DATE</td><td>Doğum tarihi — Date Picker</td></tr>
+<tr><td>meslek</td><td>ENUM (9 seçenek)</td><td>Meslek — Select/List</td></tr>
+<tr><td>email</td><td>VARCHAR(100) UNIQUE</td><td>E-posta — Text Field</td></tr>
+<tr><td>sifre</td><td>VARCHAR(255)</td><td>bcrypt ile hash'lenmiş şifre</td></tr>
+<tr><td>kayit_tarihi</td><td>TIMESTAMP</td><td>Otomatik kayıt zamanı</td></tr>
+</tbody></table>
+
+<h3>4.2 <code>haberler</code> Tablosu</h3>
+<table><thead><tr><th>Sütun</th><th>Tip</th><th>Açıklama</th></tr></thead><tbody>
+<tr><td>id</td><td>INT (PK, AI)</td><td>Haber kimliği</td></tr>
+<tr><td>baslik</td><td>VARCHAR(200)</td><td>Haber başlığı</td></tr>
+<tr><td>icerik</td><td>TEXT</td><td>Haber içeriği</td></tr>
+<tr><td>kategori</td><td>VARCHAR(50)</td><td>Kategori</td></tr>
+<tr><td>tarih</td><td>TIMESTAMP</td><td>Yayın tarihi</td></tr>
+</tbody></table>
+
+<h2 class="page-break">5. API Entegrasyonu — SofaScore</h2>
+<h3>5.1 Neden SofaScore?</h3>
+<p>Projede başlangıçta <strong>API-Football (api-sports.io)</strong> kullanılmak istenmiş, ancak ücretsiz plan yalnızca 2022-2024 sezon verilerini destekliyordu ve <code>last</code>/<code>next</code> parametreleri kullanılamıyordu. Bu nedenle <strong>SofaScore Public API</strong>'ye geçilmiştir. SofaScore; 2025-2026 güncel verilerini sağlar, API anahtarı gerektirmez ve gerçek zamanlı maç sonuçları sunar.</p>
+
+<h3>5.2 Kullanılan Endpoint'ler</h3>
+<table><thead><tr><th>Endpoint</th><th>Açıklama</th><th>Önbellek</th></tr></thead><tbody>
+<tr><td><code>/api/v1/team/3061/players</code></td><td>Galatasaray güncel kadrosu (30 oyuncu)</td><td>6 saat</td></tr>
+<tr><td><code>/api/v1/team/3061/events/last/0</code></td><td>Son oynanan maçlar</td><td>6 saat</td></tr>
+<tr><td><code>/api/v1/team/3061/events/next/0</code></td><td>Yaklaşan maçlar</td><td>6 saat</td></tr>
+</tbody></table>
+
+<h3>5.3 Önbellek Mekanizması</h3>
+<p>API çağrılarını minimize etmek için sunucu tarafında 6 saatlik in-memory cache kullanılmaktadır. Aynı endpoint'e tekrar istek geldiğinde, önbellek süresi dolmamışsa bellekten yanıt döner.</p>
+
+<h2>6. Sayfa Yapısı ve HTML Etiketleri</h2>
+<h3>6.1 Sayfalar</h3>
+<table><thead><tr><th>Sayfa</th><th>Dosya</th><th>İçerik</th></tr></thead><tbody>
+<tr><td>Ana Sayfa</td><td>index.html</td><td>Hero, istatistikler, haberler, fikstür, kadro, video</td></tr>
+<tr><td>Haberler</td><td>haberler.html</td><td>Tüm haberler grid görünümünde</td></tr>
+<tr><td>Hakkımızda</td><td>hakkimizda.html</td><td>Tarihçe, kupalar, zaman çizelgesi</td></tr>
+<tr><td>İletişim</td><td>iletisim.html</td><td>İletişim formu ve bilgileri</td></tr>
+<tr><td>Kayıt Ol</td><td>kayit.html</td><td>8 alanlı kayıt formu</td></tr>
+<tr><td>Giriş Yap</td><td>giris.html</td><td>E-posta ve şifre ile giriş</td></tr>
+<tr><td>Profil</td><td>dashboard.html</td><td>Kullanıcı bilgileri</td></tr>
+</tbody></table>
+
+<h3>6.2 Kullanılan HTML Etiketleri (20+)</h3>
+<table><thead><tr><th>#</th><th>Etiket</th><th>Kullanım</th></tr></thead><tbody>
+<tr><td>1</td><td><code>&lt;nav&gt;</code></td><td>Navigasyon çubuğu</td></tr>
+<tr><td>2</td><td><code>&lt;header&gt;</code></td><td>Hero bölümü</td></tr>
+<tr><td>3</td><td><code>&lt;main&gt;</code></td><td>Ana içerik alanı</td></tr>
+<tr><td>4</td><td><code>&lt;footer&gt;</code></td><td>Alt bilgi</td></tr>
+<tr><td>5</td><td><code>&lt;section&gt;</code></td><td>İçerik bölümleri</td></tr>
+<tr><td>6</td><td><code>&lt;article&gt;</code></td><td>Haber kartları</td></tr>
+<tr><td>7</td><td><code>&lt;aside&gt;</code></td><td>CTA bölümü</td></tr>
+<tr><td>8</td><td><code>&lt;figure&gt; / &lt;figcaption&gt;</code></td><td>Oyuncu kartları</td></tr>
+<tr><td>9</td><td><code>&lt;form&gt;</code></td><td>Kayıt ve giriş formları</td></tr>
+<tr><td>10</td><td><code>&lt;input&gt;</code> (text, email, password, radio, date)</td><td>Form alanları</td></tr>
+<tr><td>11</td><td><code>&lt;select&gt; / &lt;option&gt;</code></td><td>Meslek seçimi</td></tr>
+<tr><td>12</td><td><code>&lt;table&gt; / &lt;thead&gt; / &lt;tbody&gt;</code></td><td>Fikstür tablosu</td></tr>
+<tr><td>13</td><td><code>&lt;iframe&gt;</code></td><td>YouTube video embed</td></tr>
+<tr><td>14</td><td><code>&lt;button&gt;</code></td><td>Form gönderme, tema</td></tr>
+<tr><td>15</td><td><code>&lt;ul&gt; / &lt;li&gt;</code></td><td>Footer linkleri</td></tr>
+<tr><td>16</td><td><code>&lt;a&gt;</code></td><td>Navigasyon ve bağlantılar</td></tr>
+<tr><td>17</td><td><code>&lt;span&gt;</code></td><td>Badge'ler, istatistikler</td></tr>
+<tr><td>18</td><td><code>&lt;img&gt;</code></td><td>Oyuncu fotoğrafları</td></tr>
+<tr><td>19</td><td><code>&lt;label&gt;</code></td><td>Form etiketleri</td></tr>
+<tr><td>20</td><td><code>&lt;div&gt;</code></td><td>Genel konteyner</td></tr>
+</tbody></table>
+
+<h2 class="page-break">7. Öne Çıkan Özellikler</h2>
+
+<h3>7.1 Oturum Yönetimi ve Koşullu Arayüz</h3>
+<p>Kullanıcı giriş yaptığında navbar'daki "Giriş Yap / Kayıt Ol" butonları gizlenir, yerine kullanıcı adı, "Profilim" ve "Çıkış" butonları gösterilir. Ana sayfadaki tüm üyelik çağrıları da otomatik gizlenir.</p>
+
+<h3>7.2 Kadro Marquee (Sonsuz Kaydırma)</h3>
+<p>Tüm oyuncular yatay olarak otomatik kayan bir şerit halinde gösterilir. CSS <code>@keyframes marqueeScroll</code> animasyonu ile sürekli sola kayar, kartlar iki kez kopyalanarak kesintisiz döngü sağlanır. Fare üzerine gelindiğinde animasyon durur, kenarlar <code>mask-image</code> ile fade-out efektine sahiptir.</p>
+
+<h3>7.3 Tema Değiştirici</h3>
+<p>4 farklı tema paleti sunulur: Galatasaray Orijinal, Gece Mavisi, Okyanus ve Orman. Seçim <code>localStorage</code>'a kaydedilir ve sayfa yenilendiğinde korunur.</p>
+
+<h3>7.4 Form Doğrulama</h3>
+<p>Kayıt formunda hem istemci hem sunucu tarafı doğrulama yapılır: boş alan kontrolü, e-posta formatı (regex), şifre uzunluk (min 6), şifre eşleşme ve MySQL UNIQUE constraint ile duplicate kontrolü.</p>
+
+<h2>8. Güvenlik Önlemleri</h2>
+<table><thead><tr><th>Önlem</th><th>Uygulama</th></tr></thead><tbody>
+<tr><td><strong>Şifre Hashleme</strong></td><td>bcrypt (salt rounds: 10)</td></tr>
+<tr><td><strong>Oturum Güvenliği</strong></td><td>express-session, HttpOnly cookie, 24 saat sınırı</td></tr>
+<tr><td><strong>SQL Injection Koruması</strong></td><td>mysql2 parameterized queries</td></tr>
+<tr><td><strong>Ortam Değişkenleri</strong></td><td>Hassas bilgiler <code>.env</code> dosyasında</td></tr>
+</tbody></table>
+
+<h2>9. Geliştirme Süreci ve Zorluklar</h2>
+
+<h3>9.1 API Seçimi Süreci</h3>
+<p>Projede en büyük zorluk doğru futbol API'sini bulmak olmuştur. İlk olarak RapidAPI üzerindeki API-Football denenmiş ancak hizmet yapısı değişmişti. Doğrudan api-sports.io üzerinden kayıt yapıldı fakat ücretsiz plan sadece 2022-2024 verilerini destekliyordu. Son olarak <strong>SofaScore Public API</strong>'ye geçildi ve güncel 2025-2026 sezonu verileri başarıyla çekildi.</p>
+
+<h3>9.2 Takım ID Karışıklığı</h3>
+<p>API-Football'da Galatasaray'ın ID'si başlangıçta yanlış kodlanmıştı (357 yerine 645). Bu durum boş veri döndürülmesine neden oluyordu. API üzerinden isim sorgusu yapılarak doğru ID tespit edildi.</p>
+
+<h3>9.3 Port Çakışması</h3>
+<p>Geliştirme sırasında <code>EADDRINUSE</code> hatası sıkça yaşandı. Eski Node.js süreçlerinin arka planda asılı kalmasından kaynaklanıyordu.</p>
+
+<h2 class="page-break">10. Proje İsterlerinin Karşılanma Durumu</h2>
+<table><thead><tr><th>#</th><th>İster</th><th>Durum</th></tr></thead><tbody>
+<tr><td>1</td><td>Konu seçimi (spor kulübü)</td><td class="check">✅ Galatasaray SK</td></tr>
+<tr><td>2</td><td>Dinamik web sitesi</td><td class="check">✅ API + veritabanı</td></tr>
+<tr><td>3</td><td>HTML, JavaScript, CSS kullanımı</td><td class="check">✅ Tüm sayfalarda</td></tr>
+<tr><td>4</td><td>Veritabanı (MySQL)</td><td class="check">✅ users + haberler</td></tr>
+<tr><td>5</td><td>En az 14 farklı HTML etiketi</td><td class="check">✅ 20+ etiket</td></tr>
+<tr><td>6</td><td>Kullanıcı kaydı ve bilgi saklama</td><td class="check">✅ 8 alan, bcrypt</td></tr>
+<tr><td>7</td><td>Uygun form nesneleri (Radio, Select, Text, Date)</td><td class="check">✅</td></tr>
+<tr><td>8</td><td>Eksik bilgi uyarıları</td><td class="check">✅ İstemci + sunucu</td></tr>
+<tr><td>9</td><td>Kayıt başarı/hata mesajları</td><td class="check">✅</td></tr>
+<tr><td>10</td><td>Stil ve renk değiştirilebilmesi</td><td class="check">✅ 4 tema</td></tr>
+<tr><td>11</td><td>Bootstrap kullanımı (ek puan)</td><td class="check">✅ Bootstrap 5.3</td></tr>
+<tr><td>12</td><td>Kimlik doğrulama (ek puan)</td><td class="check">✅ Oturum yönetimi</td></tr>
+</tbody></table>
+
+<h2>11. Sonuç</h2>
+<p>Galatasaray SK Fan Web Sitesi, modern web teknolojilerini (HTML5, CSS3, ES6+ JavaScript, Node.js, MySQL) kullanarak tam fonksiyonel, güvenli ve görsel olarak zengin bir dinamik web uygulaması olarak başarıyla geliştirilmiştir. Projede SofaScore API entegrasyonu ile gerçek zamanlı futbol verileri, bcrypt ile güvenli kullanıcı sistemi, CSS animasyonları ile modern arayüz ve responsive tasarım ile tüm cihazlarda uyumlu görünüm sağlanmıştır.</p>
+<p>Proje, ödev dokümanında belirtilen tüm zorunlu isterleri ve ek puan kriterlerini eksiksiz karşılamaktadır.</p>
+
+</div>
+</body>
+</html>
